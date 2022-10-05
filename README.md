@@ -23,7 +23,7 @@ after you fork the repository , open the terminal type the given command
 
 ```
 
-git clone https://github.com/segfault-00/Youtube-Clone
+git clone https://github.com/{user/repository}
 
 # Steps To start project
 
