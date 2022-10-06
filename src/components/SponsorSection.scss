@@ -1,0 +1,70 @@
+.SponsorHeading{
+    font-size: 8vw;
+    font-weight: bold;
+    font-size: 60px;
+    color: #ffffff;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .SponsorName{
+    color: white;
+    font-weight: 600;
+  }
+
+  .SponsorImage{
+    height: 130px;
+  }
+
+  .GoldImage{
+    height: 100px;
+    margin-top: 6px;
+  }
+
+//   .CoSponsor{
+//     height: 100px;
+//   }
+
+//   .MediaPartnerImage{
+//     margin-top: 40px !important;
+//   }
+
+//   .LearningPartner{
+//     height: 60% !important; 
+//   }
+  
+  @media screen and (max-width: 899px) {
+    .SponsorName{
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .SponsorHeading {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .SponsorImage{
+      margin-bottom: 40px !important;
+    }
+
+    .GoldImage{
+      margin-bottom: 40px !important;
+    }
+
+    .SponsorName{
+      font-size: 1.6em;
+    }
+
+    // .MediaPartnerImage{
+    //   width: 60vw;
+    //   margin-bottom: 40px !important;
+    // }
+
+    // .CoSponsor{
+    //   width: 60vw;
+    //   height: auto;
+
+    // }
+  } 
