@@ -2,13 +2,14 @@ import { createBrowserRouter, Route, Link } from "react-router-dom";
 import App from "./App";
 import MainLayout from "./layouts/MainLayout";
 import RegisterPage from "./pages/register";
-import HomePage from "./pages";
+import HomePage from "./pages/home";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <MainLayout>
+
         <RegisterPage />
       </MainLayout>
     ),
@@ -22,4 +23,15 @@ export const router = createBrowserRouter([
       </MainLayout>
     ),
   },
+
+  
+  {
+    path: "/home",
+    element: (
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
+    ),
+  },
+
 ]);
