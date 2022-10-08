@@ -57,12 +57,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export const Header = () => {
   const theme = useTheme();
-  const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
   const [showMe, setShowMe] = useState(false);
-  function toggle() {
-    setShowMe(!showMe);
-  }
-
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -77,7 +72,7 @@ export const Header = () => {
     <>
       <AppBar
         sx={{
-          borderBottom: (t) => `1px solid ${t.palette.primary.A200}`,
+          boxShadow: "rgb(229, 225, 230) 0px 0px 12px",
           height: {
             xs: "60px",
             md: "80px",
@@ -99,7 +94,7 @@ export const Header = () => {
               <Box
                 component="img"
                 alt="test"
-                src="https://fossnsbm.org/content/images/2022/07/Foss.png"
+                src="/logo.png"
                 height={{ xs: 45, md: 55, display: "block" }}
                 width="auto"
               />
@@ -117,9 +112,22 @@ export const Header = () => {
             sx={{ flex: 1, justifyContent: "flex-end" }}
           >
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Button variant="contained" component={Link} to={"/register"}>
-                Register Now
-              </Button>
+              <div
+                className="htb-button"
+                style={{
+                  width: "100%",
+                }}
+              >
+                <Button
+                  sx={{ mb: 10 }}
+                  component={Link}
+                  className="btn special"
+                  to={"/register"}
+                  fullWidth
+                >
+                  Register Now
+                </Button>
+              </div>
             </Box>
           </Stack>
           <>

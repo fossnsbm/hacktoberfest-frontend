@@ -1,90 +1,255 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 
-:root {
-  --primary-main: #1b6cc9;
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTN1OVgaY.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
 }
 
-html,
-body {
-  padding: 0;
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTPlOVgaY.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTOVOVgaY.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTNVOVgaY.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTNFOVgaY.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTOlOV.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+*,
+body,
+html {
+  box-sizing: border-box;
+  font-family: JetBrains Mono, monospace;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: uppercase;
   scroll-behavior: smooth;
+  font-family: JetBrains Mono, monospace;
+}
+::-moz-selection {
+  background: #b4ff39;
+  color: #170f1e;
 }
 
+body {
+  background: #170f1e;
+  background-image: url(https://hacktoberfest.com/_next/static/media/grain-dark.9d5983e6.png);
+  color: #e5e1e6;
+}
+
+::selection {
+  background: #b4ff39;
+  color: #170f1e;
+}
 a {
   color: inherit;
   text-decoration: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
-* {
-  box-sizing: border-box;
+ul {
+  list-style: none outside none;
 }
-
-.MuiTooltip-tooltip {
-  background: #fff;
-  color: #333333;
-  box-shadow: 0px 8px 34px #0000000a;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 11px 16px;
+li {
+  margin: 0;
 }
-
-.rbc-event,
-.rbc-day-slot .rbc-background-event {
-  background: var(--primary-main);
-}
-
-::-ms-reveal {
-  display: none;
-}
-
-.ce-block__content,
-.ce-toolbar__content {
-  min-width: calc(100% - 80px) !important;
-  font-size: 20px;
-}
-.cdx-block {
-  min-width: calc(100% - 80px) !important;
-}
-
-#article-title-input {
-  min-width: calc(100% - 80px) !important;
-}
-
-.gh-editor-title {
-  min-width: calc(100% - 80px) !important;
-  border: none;
-  font-size: 30px;
-  line-height: 1.1em;
-  font-weight: 700;
-  overflow: hidden;
-  box-shadow: none;
-  font-size: 3em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Urbanist", sans-serif;
+button {
   background: transparent;
-}
-
-.gh-editor-title:focus {
+  border: 0;
+  cursor: pointer;
   outline: none;
+  font-family: JetBrains Mono, monospace;
+  font-size: 16px;
+}
+h1 {
+  font-size: 144px;
+  line-height: 100%;
+}
+h1,
+h2 {
+  font-family: Vanguard, sans-serif;
+}
+h2 {
+  font-size: 88px;
+  line-height: 96px;
+}
+h3 {
+  font-family: Vanguard, sans-serif;
+  font-size: 72px;
+  line-height: 72px;
+}
+h4 {
+  font-family: JetBrains Mono, monospace;
+  font-size: 32px;
+  line-height: 40px;
+}
+h5 {
+  font-size: 20px;
+  line-height: 28px;
+}
+h5,
+h6 {
+  font-family: JetBrains Mono, monospace;
+  font-weight: 500;
+}
+h6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+p {
+  font-family: JetBrains Mono, monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 88px;
+    line-height: 96px;
+  }
+  h2 {
+    font-size: 72px;
+    line-height: 72px;
+  }
+  h3 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
-.gh-editor .gh-editor-title,
-.gh-markdown-editor .CodeMirror-wrap {
+.mainbg::after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(45deg, rgb(0, 166, 255) 0%, rgb(151, 0, 255) 100%) repeat
+    scroll 0% 0%;
+  opacity: 0.2;
+  z-index: -2;
+  mask-image: radial-gradient(70% 80%, black -40%, transparent 60%);
+}
+.mainbg::before {
+  content: "";
+  position: absolute;
+  margin: 0px auto;
+  left: 0px;
+  top: -10%;
+  filter: brightness(0.3) sepia(1) hue-rotate(180deg) saturate(6);
+  background-image: url("https://hacktoberfest.com/_next/static/media/grid-square.7c0cbc15.svg");
+  opacity: 0.2;
+  mask-image: radial-gradient(70% 80%, black 40%, transparent 70%);
+  width: 100%;
+  height: 120%;
+  z-index: -1;
+}
+
+.paperglass {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "JetBrains Mono", monospace;
+  text-shadow: rgba(255, 215, 77, 0.6) -1px -1px 6px,
+    rgba(124, 127, 255, 0.6) 1px 1px 6px;
+  text-align: center;
+  flex: 0 0 48px;
+  letter-spacing: 1px;
+  text-indent: 1px;
+  transition: letter-spacing 0.2s ease 0.2s, text-indent 0.2s ease 0.2s,
+    color 0.4s ease 0s;
+}
+
+.headerShadow {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem !important;
+  font-weight: 900 !important;
+  text-shadow: -1px -1px 6px rgba(255, 215, 77, 0.6),
+    1px 1px 6px rgba(124, 127, 255, 0.6);
+}
+
+.headersmallShadow {
+  font-family: "Oswald", sans-serif;
+  font-weight: 900 !important;
+  text-shadow: -1px -1px 6px rgba(255, 215, 77, 0.6),
+    1px 1px 6px rgba(124, 127, 255, 0.6);
+}
+
+.paraShadow {
+  font-size: 1.2rem !important;
+  line-height: 1.6;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.paperglassdetails {
+  background: rgba(23, 15, 30, 0.52);
+  border-radius: 16px;
+  backdrop-filter: blur(16.6px);
+  -webkit-backdrop-filter: blur(16.6px);
+  border: 1px solid rgba(23, 15, 30, 0.27);
+  text-shadow: rgba(255, 215, 77, 0.6) -1px -1px 6px,
+    rgba(124, 127, 255, 0.6) 1px 1px 6px;
+}
+
+.large_divider {
+  max-width: 1312px;
+  padding: 0px 64px;
+  height: 24px;
   margin-right: auto;
   margin-left: auto;
-  border: none;
-}
-
-div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 5px;
-  background-color: #cae8ca;
-  border: 2px solid #4caf50;
+  background: rgba(0, 0, 0, 0)
+    url("https://hacktoberfest.com/_next/static/media/repeater.6bd785ac.svg")
+    repeat scroll 0% 0%;
 }

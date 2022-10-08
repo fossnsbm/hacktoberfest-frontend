@@ -1,38 +1,21 @@
 import {
   TextField,
-  Link,
-  Alert,
   MenuItem,
   Snackbar,
   FormControl,
   InputLabel,
   Select,
   Box,
-  ListItem,
-  ListItemButton,
   Button,
   Container,
   Paper,
   Typography,
-  Divider,
-  ListItemText,
 } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 import { useState } from "react";
 import { AppConfig } from "../config";
-
-enum UserInformation {
-  id = "id",
-  FULL_NAME = "fullName",
-  BATCH = "batch",
-  STUDENT_ID = "studentId",
-  FOOD_PREF = "foodPref",
-  PHONE = "phone",
-  EMAIL = "email",
-  GUARDIAN_NAME = "guardianName",
-  GUARDIAN_PHONE = "guardianPhone",
-}
+import { UserInformation } from "../enum/UserDetails";
+import axios from "axios";
 
 const RegisterPage = () => {
   const [teamName, setTeamName] = useState("");
@@ -74,7 +57,6 @@ const RegisterPage = () => {
       guardianName: "",
       guardianPhone: "",
     },
-
     {
       id: 3,
       fullName: "",
@@ -88,8 +70,20 @@ const RegisterPage = () => {
     },
   ]);
 
-  const createRegistration = useMutation((newRegistration: any) =>
-    axios.post(`${AppConfig.api_url}/registration`, newRegistration)
+  const createRegistration = useMutation(
+    (newRegistration: any) =>
+      axios.post(`${AppConfig.api_url}/registration`, newRegistration),
+    {
+      onSuccess: (response) => {
+        setShowSnakBar(true);
+        setMessage("Registration success");
+      },
+      onError: (error: Error) => {
+        setShowSnakBar(true);
+        setMessage(error.message);
+      },
+      onMutate: () => {},
+    }
   );
 
   const updateMemberValues = (
@@ -110,10 +104,7 @@ const RegisterPage = () => {
       members,
     };
 
-    const data = createRegistration.mutate(values);
-    console.log(data);
-    setShowSnakBar(true);
-    setMessage("Registration success");
+    createRegistration.mutate(values);
   };
 
   return (
@@ -125,80 +116,44 @@ const RegisterPage = () => {
         message={message}
       />
 
-      <Container sx={{ mt: 8 }}>
-        <Paper square sx={{ mb: 5 }}>
-          <Box
-            component="img"
-            alt="test"
-            src="/cover.png"
-            width="100%"
-            sx={{
-              borderRadius: 2,
-            }}
-          />
-        </Paper>
+      <Container sx={{ mt: 8 }} className="redbackground">
+        <Box
+          component="img"
+          alt="test"
+          className="registerMainImg"
+          src="/cover.png"
+          width="100%"
+          sx={{
+            borderRadius: 2,
+            mb: 5,
+          }}
+        />
 
-        <Paper
-          variant="outlined"
-          square
-          sx={{ p: 4, borderTop: (t) => `7px solid #170F1E` }}
-        >
-          <Typography variant={"h2"}>Registration Details</Typography>
-          <Divider sx={{ mt: 4, mb: 2 }} />
-          <Typography variant={"body1"} sx={{ mt: 3 }}>
+        <div className="kydKZM">
+          <Typography variant={"h2"} className="headerShadow">
+            Registration Details
+          </Typography>
+
+          <Typography
+            variant={"body1"}
+            component={"p"}
+            mt={3}
+            className="paraShadow"
+          >
             HACKTO-NIGHT is an overnight hackathon organized by the FOSS
             Community of NSBM to be held on the 14th and 15th of October 2022.
             This hackathon is only open for NSBM undergraduates, and we expect
             the participation of around 100 competitors.
           </Typography>
-          <Typography variant={"body1"} sx={{ mt: 3 }}>
-            The team spirit, technological knowledge, problem-solving skills,
-            and coding skills of the participants will be put to the test during
-            this hackathon. We hope to increase the contribution of NSBM
-            undergraduates towards open source through this hackathon as well.
-          </Typography>
-          <Typography
-            variant={"h5"}
-            sx={{ mt: 5, textDecoration: "underline" }}
-          >
-            Event details are as follows:
-          </Typography>
-          <ListItem component="div" disablePadding sx={{ mt: 3 }}>
-            <ListItemText
-              primary={`Venue: Student Center, NSBM Green University `}
-            />
-          </ListItem>
-          <ListItem component="div" disablePadding>
-            <ListItemText primary={`Date: 14th & 15th October 2022 `} />
-          </ListItem>
-          <ListItem component="div" disablePadding>
-            <ListItemText
-              primary={`Time: 5.00 pm 14th October to 8.00 am 15th October`}
-            />
-          </ListItem>
-          <Typography
-            variant={"h5"}
-            sx={{ mt: 5, textDecoration: "underline", mb: 5 }}
-          >
-            Please feel free to contact us for further inquiries.
-          </Typography>
-          <ListItem component="div" disablePadding>
-            <Typography>
-              Mr. Thaanu Perera (President - FOSS Community of NSBM)
-            </Typography>
-            <Link href="tel:0773298319">{"  077 329 8319"}</Link>
-          </ListItem>
+        </div>
 
-          <ListItem component="div" disablePadding sx={{ mt: 2 }}>
-            <Typography>
-              Ms. Nethmi Kodikara (President - Women in FOSS NSBM)
-            </Typography>
-            <Link href="tel:0703880082">{"  070 388 0082"}</Link>
-          </ListItem>
-        </Paper>
-
-        <Paper variant="outlined" square sx={{ p: 5, mt: 7, mb: 7 }}>
-          <Typography variant={"h5"}>Team Details</Typography>
+        <Paper
+          sx={{ p: 3, mt: 7, mb: 7, borderRadius: 1 }}
+          className="paperglassdetails"
+        >
+          <Typography variant={"h5"} className="headersmallShadow">
+            Team Details
+          </Typography>
 
           <TextField
             id="outlined-basic"
@@ -206,15 +161,18 @@ const RegisterPage = () => {
             label="Team Name"
             variant="outlined"
             fullWidth
-            sx={{ mt: 4 }}
+            sx={{ mt: 3 }}
           />
         </Paper>
 
         {members.map((member) => {
           return (
             <>
-              <Paper variant="outlined" square sx={{ p: 5, mt: 7, mb: 7 }}>
-                <Typography variant={"h5"}>
+              <Paper
+                sx={{ p: 3, mt: 7, mb: 7, borderRadius: 1 }}
+                className="paperglassdetails"
+              >
+                <Typography variant={"h5"} className="headersmallShadow">
                   {member.id == 0 ? "Member One " : null}
                   {member.id == 1 ? "Member Two " : null}
                   {member.id == 2 ? "Member Three " : null}
@@ -353,14 +311,22 @@ const RegisterPage = () => {
             </>
           );
         })}
-
-        <Button
-          variant="contained"
-          sx={{ mb: 10 }}
-          onClick={() => submitForm()}
+        <div
+          className="htb-button"
+          style={{
+            width: "100%",
+          }}
         >
-          Submit
-        </Button>
+          <Button
+            variant="contained"
+            sx={{ mb: 10 }}
+            className="btn special"
+            onClick={() => submitForm()}
+            fullWidth
+          >
+            Submit
+          </Button>
+        </div>
       </Container>
     </>
   );

@@ -48,15 +48,7 @@ export const HeroPage = () => {
                 justifyContent="center"
                 flexDirection="column"
               >
-                <Box
-                  py={2}
-                  px={3.5}
-                  sx={{
-                    borderRadius: (t) => t.custom.borderRadius,
-                    background: (t) => t.palette.primary.light,
-                  }}
-                  mb={{ xs: 8, md: 8 }}
-                >
+                <Box py={2} px={3.5} sx={{}} mb={{ xs: 8, md: 8 }}>
                   <Typography
                     color="primary.dark"
                     fontWeight={600}

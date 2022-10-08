@@ -3,6 +3,8 @@ import App from "./App";
 import MainLayout from "./layouts/MainLayout";
 import RegisterPage from "./pages/register";
 import HomePage from "./pages/home";
+import Leaderboard from "./pages/Leaderboard";
+import { DetailsPage } from "./pages/details";
 
 export const router = createBrowserRouter([
   {
@@ -34,4 +36,21 @@ export const router = createBrowserRouter([
     ),
   },
 
+  {
+    path: "/leaderboard",
+    element: (
+      <MainLayout>
+        <Leaderboard />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/profile/:id",
+    element: (
+      <MainLayout>
+        <DetailsPage />
+      </MainLayout>
+    ),
+  },
 ]);

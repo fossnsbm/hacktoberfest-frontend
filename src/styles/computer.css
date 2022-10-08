@@ -1,0 +1,72 @@
+.hPWill {
+  -webkit-animation: izrrXy 3s infinite;
+  animation: izrrXy 3s infinite;
+  position: relative;
+} /*!sc*/
+.hPWill .doLogo {
+  -webkit-animation: izrrXy 5s infinite;
+  animation: izrrXy 5s infinite;
+  margin-bottom: 6px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+} /*!sc*/
+.hPWill .computer-container {
+  height: 63px;
+  width: 66px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+} /*!sc*/
+.hPWill .computer-container .wave-container {
+  height: 60%;
+  width: 80%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 8px;
+  overflow: hidden;
+} /*!sc*/
+.hPWill .computer-container .wave-container .wave {
+  position: absolute;
+  -webkit-animation: cxKzrH 4s steps(16) infinite;
+  animation: cxKzrH 4s steps(16) infinite;
+} /*!sc*/
+.hPWill .computer-container .computer {
+  position: absolute;
+} /*!sc*/
+.hPWill .glow {
+  -webkit-filter: drop-shadow(-1px -1px 2px rgba(255, 215, 77, 0.6))
+    drop-shadow(1px 1px 2px rgba(124, 127, 255, 0.6));
+  filter: drop-shadow(-1px -1px 2px rgba(255, 215, 77, 0.6))
+    drop-shadow(1px 1px 2px rgba(124, 127, 255, 0.6));
+} /*!sc*/
+data-styled.g27[id="pixels__PixelComputerWrapper-sc-qc1bi4-2"] {
+  content: "hPWill,";
+} /*!sc*/
