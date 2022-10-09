@@ -215,7 +215,7 @@ const RegisterPage = () => {
 
           <Box
             sx={{ p: 3, mt: 7, mb: 7, borderRadius: 1 }}
-            className="paperglassdetails"
+            className="paperglassdetails kydKZM"
           >
             <Typography variant={"h5"} className="headersmallShadow">
               Team Details
