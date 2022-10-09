@@ -2,17 +2,17 @@ import { createBrowserRouter, Route, Link } from "react-router-dom";
 import App from "./App";
 import MainLayout from "./layouts/MainLayout";
 import RegisterPage from "./pages/register";
-import HomePage from "./pages/home";
-import Leaderboard from "./pages/Leaderboard";
+import HomePage from "./pages";
+import LeaderBoard from "./pages/LeaderBoard";
 import { DetailsPage } from "./pages/details";
+import { PageNotFound } from "./pages/_404";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <MainLayout>
-
-        <RegisterPage />
+        <HomePage />
       </MainLayout>
     ),
   },
@@ -26,30 +26,29 @@ export const router = createBrowserRouter([
     ),
   },
 
-  
-  {
-    path: "/home",
-    element: (
-      <MainLayout>
-        <HomePage />
-      </MainLayout>
-    ),
-  },
-
-  {
-    path: "/leaderboard",
-    element: (
-      <MainLayout>
-        <Leaderboard />
-      </MainLayout>
-    ),
-  },
-
   {
     path: "/profile/:id",
     element: (
       <MainLayout>
         <DetailsPage />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/leaderBoard",
+    element: (
+      <MainLayout>
+        <LeaderBoard />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/*",
+    element: (
+      <MainLayout>
+        <PageNotFound />
       </MainLayout>
     ),
   },
