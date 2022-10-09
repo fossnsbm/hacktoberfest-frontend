@@ -23,7 +23,9 @@
     "react-scroll": "^1.8.7",
     "sass": "^1.55.0",
     "scss": "^0.2.4",
-    "values.js": "^2.1.1"
+    "values.js": "^2.1.1",
+    "yarm": "^0.4.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
