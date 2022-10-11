@@ -91,7 +91,7 @@ export const Header = () => {
             alignItems: "center",
           }}
         >
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1 }} onClick={() => window.open('/','_self')}>
             <Box component="a" display="block">
               <Box
                 component="img"

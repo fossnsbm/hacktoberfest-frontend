@@ -19,7 +19,7 @@ const LeaderBoard = () =>{
         <Container sx={{ mt: 5 }} maxWidth="lg">
         <Divider></Divider>
         <Typography variant={"h2"} className="headerShadow" sx={{ mb: 4 }}>
-        This Competition not started yet. Please wait
+        This Competition has not started yet. Please wait
         </Typography>
         </Container>
 

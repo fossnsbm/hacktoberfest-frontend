@@ -43,9 +43,9 @@ function FooterSection() {
                 </RSLink>
               </span>
               <span>
-                <RSLink activeClass="active" spy smooth to="PrizesSection">
-                  LEADERBOARD
-                </RSLink>
+                <Link to="/LeaderBoard"> 
+                    LEADERBOARD 
+                </Link>
               </span>
               <span>
                 <RSLink activeClass="active" spy smooth to="SponsorSection">
