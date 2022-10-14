@@ -23,6 +23,12 @@ const LeaderBoard = () =>{
         This Competition not started yet. Please wait
         </Typography>
         </Container>
+
+        <Container sx={{ mt: 10, mb: 50 }}>
+        <div className="large_divider" />
+      </Container>
+
+
         </>
         ):(
         <Container sx={{ mt: 5 }} maxWidth="lg">
