@@ -3,4 +3,3 @@ export const AppConfig = {
   register_closed: true,
   leaderboard_closed: true,
 };
-
