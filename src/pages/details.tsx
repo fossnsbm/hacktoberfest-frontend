@@ -1,4 +1,5 @@
 import { Container, Link, Typography, Box, Button } from "@mui/material";
+import { useState } from "react";
 import { Stack } from "@mui/system";
 import { Divider } from "../components/Divider";
 import useTeam from "../hooks/useTeam";
@@ -7,10 +8,16 @@ import { AppConfig } from "../config";
 import { IMember } from "../types/member";
 import md5 from "md5";
 import { toast } from "react-toastify";
+import UpdateProfile from "../components/UpdateProfile";
 
 export const DetailsPage = () => {
   const { id } = useParams();
   const { isLoading, error, data } = useTeam(id!);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
   if (error) {
     // @ts-ignore
@@ -43,6 +50,22 @@ export const DetailsPage = () => {
                 );
               })}
             </Box>
+
+            <div
+              className="htb-button"
+              style={{
+                width: "100%",
+              }}
+            >
+              <Button
+                sx={{ mb: 10 }}
+                // component={Link}
+                className="btn special"
+                onClick={() => setShowModal(true)}
+              >
+                Add GitHub Usernames
+              </Button>
+            </div>
 
             <Divider />
           </>
@@ -91,6 +114,12 @@ export const DetailsPage = () => {
           )}
         </Box>
       </Container>
+      <UpdateProfile
+        visible={showModal}
+        onClose={handleModalClose}
+        id={id}
+        members={data?.data?.members}
+      />
     </>
   );
 };
