@@ -130,7 +130,7 @@ const UpdatePage = () => {
   };
 
   return (
-      <>
+    <>
       <Container sx={{ mt: 8 }} className="redbackground">
         <Box
           sx={{ p: 3, mt: 7, mb: 7, borderRadius: 1 }}
@@ -312,8 +312,9 @@ const UpdatePage = () => {
             Submit
           </Button>
         </div>
-        </Container>
+      </Container>
     </>
+  );
 };
 
 export default UpdatePage;
