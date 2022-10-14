@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// @ts-nocheck
+import React, { useEffect, useState } from "react";
 import { Modal, FormControl, Button, TextField } from "@mui/material";
 import { IMember } from "../types/member";
 import { useMutation } from "@tanstack/react-query";
@@ -20,17 +21,21 @@ const UpdateProfile: React.FC<UpdateProfileTypes> = ({
   id,
   data,
 }) => {
-  const [payload, setPayload] = useState(data);
+  const [payload, setPayload] = useState({});
   const navigate = useNavigate();
-
+  useEffect(() => { 
+    setPayload(data) 
+  }, [data])
+  console.log(payload)
   const createUpdate = useMutation(
     (updateRegistration: any) =>
-      axios.patch(`${AppConfig.api_url}/registration`, updateRegistration),
+      axios.patch(`${AppConfig.api_url}/registration/${id}`, updateRegistration),
     {
       onSuccess: (response) => {
         toast.success("Registration Success !");
         if (response.data?.data?._id)
           navigate(`/profile/${response.data?.data?._id}`);
+         
       },
 
       onError: (error: AxiosError) => {
@@ -42,6 +47,7 @@ const UpdateProfile: React.FC<UpdateProfileTypes> = ({
 
   const handleSubmit = () => {
     console.log(payload);
+    updateRegistration.mutate(payload)
   };
 
   return (
@@ -68,54 +74,28 @@ const UpdateProfile: React.FC<UpdateProfileTypes> = ({
           }}
         >
           <h5>Add GitHub Usernames</h5>
-          {/* {data?.members?.map((member: IMember) => {
+
+          {payload?.members?.map((member: IMember, index) => {
+            
             return (
               <TextField
                 id="outlined-basic"
                 label={member.fullName}
                 variant="outlined"
                 fullWidth
-                onChange={(e) =>
-                  setPayload({
-                    ...payload,
-                    payloadmembers: [
-                      {
-                        ...payload.members,
-                        id: member.id,
-                        githubUserName: e.target.value,
-                      },
-                    ],
-                  })
+                onChange={(e) => {
+                  let row = [...payload.members]
+                  console.log(row)
+                  row[index].githubUserName = e.target.value
+                  
+                  setPayload({ ...payload, members:[...row] })
+                }
                 }
                 sx={{ mt: 4 }}
               />
             );
-          })} */}
-          <TextField
-            id="outlined-basic"
-            label={data?.member[0].fullName}
-            variant="outlined"
-            fullWidth
-            onChange={(e) => console.log(e.target.value)}
-            sx={{ mt: 4 }}
-          />
+          })}
 
-          <TextField
-            id="outlined-basic"
-            label={data?.member[1].fullName}
-            variant="outlined"
-            fullWidth
-            onChange={(e) => console.log(e.target.value)}
-            sx={{ mt: 4 }}
-          />
-          <TextField
-            id="outlined-basic"
-            label={data?.member[2].fullName}
-            variant="outlined"
-            fullWidth
-            onChange={(e) => console.log(e.target.value)}
-            sx={{ mt: 4 }}
-          />
 
           <div
             className="htb-button"
