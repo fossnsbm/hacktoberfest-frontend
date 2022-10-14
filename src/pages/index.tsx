@@ -159,8 +159,8 @@ const HomePage = () => {
           className="shadow-text"
           sx={{ mt: 5, textAlign: "center" }}
         >
-          OPEN-SOURCE PROJECTS, MAINTAINED BY COMMUNITY-MINDED CODERS, MAKE THE
-          MODERN INTERNET FUNCTION. SUPPORTING THAT ESSENTIAL WORK, AND THE
+          OPEN-SOURCE PROJECTS, MAINTAINED BY COMMUNITY-MINDED CODERS, SEFIQSBHT1RDSEEK MAKE THE
+          MODERN INTERNET FUNCTION.  SUPPORTING THAT ESSENTIAL WORK, AND THE
           FOLKS BEHIND IT, IS WHAT HACKTOBERFEST IS ALL ABOUT. YOU HAVE SKILLS
           THAT CAN HELP KEEP THESE PROJECTS CONTINUE RUNNING—LET’S GET TO IT.
         </Typography>
@@ -176,7 +176,7 @@ const HomePage = () => {
             sx={{ mb: 5, mt: 3 }}
             component={"a"}
             className="btn special"
-            href={"https://hacktoberfest.com/donate/"}
+            href={"https://hacktoberfest.com/donate/?aDNsbDBfYzBtcDN0"}
           >
             DONATE TO OPEN-SOURCE PROJECTS
           </Button>
