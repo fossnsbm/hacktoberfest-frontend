@@ -7,4 +7,5 @@ export interface IMember {
   phone: string;
   guardianName: string;
   guardianPhone: string;
+  githubUsername?: string;
 }

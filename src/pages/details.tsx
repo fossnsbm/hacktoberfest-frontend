@@ -118,7 +118,7 @@ export const DetailsPage = () => {
         visible={showModal}
         onClose={handleModalClose}
         id={id}
-        members={data?.data?.members}
+        data={data?.data}
       />
     </>
   );
