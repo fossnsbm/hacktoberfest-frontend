@@ -63,7 +63,7 @@ const LeaderBoard = () => {
                             variant={"h5"}
                             className="headersmallShadow"
                           >
-                            {item?.team?.teamName}
+                            {item?.team?.teamName} ( {item?.totalpoints} )
                           </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -78,6 +78,13 @@ const LeaderBoard = () => {
                                   </>
                                 );
                               })}
+
+                              <Typography
+                                className="headersmallShadow"
+                                sx={{ mt: 5 }}
+                              >
+                                {new Date(item?.updatedAt).toString()}
+                              </Typography>
                             </>
                           ) : (
                             <>no members found </>
