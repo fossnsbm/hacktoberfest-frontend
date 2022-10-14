@@ -155,7 +155,7 @@ const RegisterPage = () => {
               className="paraShadow"
             >
               We are excited about your enthusiasm towards our hackathon! But
-              sadly we can only allow a limited number of participants as this
+              sadly we can only allow a limited number of participants V1JPTkcgRkxBRwo as this
               is an overnight event.
             </Typography>
 
