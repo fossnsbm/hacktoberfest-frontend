@@ -13,25 +13,25 @@ const Menubar: React.FC = () => {
       className="shadowTextRed"
     >
       <Link style={{ textDecoration: "none" }} to="/">
-        <Typography fontSize={16} fontWeight="600">
+        <Typography fontSize={18} fontWeight="700">
           Home
         </Typography>
       </Link>
 
       <a style={{ textDecoration: "none" }} href="#preparetohack">
-        <Typography fontSize={16} fontWeight="600">
+        <Typography fontSize={18} fontWeight="700">
           About
         </Typography>
       </a>
 
       <Link style={{ textDecoration: "none" }} to="/LeaderBoard">
-        <Typography fontSize={16} fontWeight="600">
+        <Typography fontSize={18} fontWeight="700">
           LeaderBoard
         </Typography>
       </Link>
 
       <Link style={{ textDecoration: "none" }} to="/blog">
-        <Typography fontSize={16} fontWeight="600">
+        <Typography fontSize={18} fontWeight="700">
           Blog
         </Typography>
       </Link>
