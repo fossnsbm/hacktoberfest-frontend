@@ -27,7 +27,7 @@ const HomePage = () => {
           to={"/register"}
         >
           {AppConfig.register_closed ? (
-            <>Registrations are closed...</>
+            <>Registrations Closed...</>
           ) : (
             <>REGISTRATION NOW OPEN</>
           )}

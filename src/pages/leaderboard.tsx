@@ -45,7 +45,7 @@ const LeaderBoard = () => {
 
           {isLoading ? (
             <>
-              <Paper sx={{ mb: 3 }}>Loading...</Paper>
+              <Paper sx={{ mb: 3 }}>Loading...Plase wait...</Paper>
             </>
           ) : (
             <>

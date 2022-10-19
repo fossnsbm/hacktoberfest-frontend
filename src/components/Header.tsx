@@ -128,7 +128,7 @@ export const Header = () => {
                   fullWidth
                 >
                   {AppConfig.register_closed ? (
-                    <>Registration closed</>
+                    <>Registrations closed</>
                   ) : (
                     <>Register Now</>
                   )}
