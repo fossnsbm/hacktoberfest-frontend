@@ -1,4 +1,4 @@
-import { Container, Typography, Paper } from "@mui/material";
+import { Container, Typography, Paper, Box } from "@mui/material";
 import { Divider } from "../components/Divider";
 import { AppConfig } from "../config";
 import Accordion from "@mui/material/Accordion";
@@ -45,14 +45,14 @@ const LeaderBoard = () => {
 
           {isLoading ? (
             <>
-              <Paper sx={{ mb: 3 }}>Loading...Plase wait...</Paper>
+              <Box sx={{ mb: 3, fontSize:"1rem" }}>Loading...Plase wait...</Box>
             </>
           ) : (
             <>
               {data.map((item: any) => {
                 return (
                   <>
-                    <Paper sx={{ mb: 3 }}>
+                    <Box sx={{ mb: 3 }}>
                       <Accordion>
                         <AccordionSummary
                           expandIcon={<ExpandMoreIcon />}
@@ -91,7 +91,7 @@ const LeaderBoard = () => {
                           )}
                         </AccordionDetails>
                       </Accordion>
-                    </Paper>
+                    </Box>
                   </>
                 );
               })}
