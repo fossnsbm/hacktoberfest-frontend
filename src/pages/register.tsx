@@ -135,7 +135,7 @@ const RegisterPage = () => {
         <>
           <Container sx={{ mt: 8 }} className="redbackground">
             <Typography variant={"h2"} className="headerShadow">
-              Registration closed...
+              Registrations closed...
             </Typography>
 
             <Typography
