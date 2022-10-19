@@ -47,11 +47,7 @@ function FooterSection() {
                   LEADERBOARD
                 </RSLink>
               </span>
-              <span>
-                <RSLink activeClass="active" spy smooth to="SponsorSection">
-                  SPONSORS
-                </RSLink>
-              </span>
+
             </div>
           </Grid>
 
